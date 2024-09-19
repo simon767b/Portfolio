@@ -1,0 +1,688 @@
+/*----------------------
+---------root-----------
+----------------------*/
+/* Reset margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Root is the HTML document,but it is also used to declare global css variables*/
+:root {
+  font-family: "Nunito", sans-serif;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  --main-black: #111013;
+  --main-sand: #f5efdf;
+  --main-beige: #e0c4a3;
+  --main-grey: #373737;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.mobil-text {
+  font-size: 0.6rem;
+}
+
+/*----------------------
+---------Grid-----------
+----------------------*/
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+/* Grid container*/
+
+.grid-container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  grid-gap: 15px;
+  width: 100dvw;
+  height: 100dvh;
+}
+
+/*----------------------
+--------indhold---------
+----------------------*/
+
+/* generel styling */
+.kasse {
+  border-radius: 10px;
+  background-color: var(--main-sand);
+  color: var(--main-black);
+  padding: 10px;
+}
+
+/* header */
+
+header {
+  grid-column: 1 / 6;
+  grid-row: 1 / 2;
+  padding: 5px;
+  z-index: 111;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+
+/* burger menu*/
+header nav ul {
+  position: fixed;
+  bottom: 0px;
+  transform: translate(-50%, -15%);
+  justify-content: center;
+  align-items: center;
+
+  /* border */
+  background: linear-gradient(var(--main-black), var(--main-black)) padding-box,
+    linear-gradient(
+        45deg,
+        var(--main-beige),
+        transparent,
+        transparent,
+        var(--main-beige)
+      )
+      border-box;
+  border-radius: 10px;
+  border: 4px solid transparent;
+  /* border end*/
+
+  background-color: var(--main-black);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  padding: 20px 30px;
+  width: 90%;
+  border-radius: 10px;
+  transition: all 1s ease-in-out;
+
+  justify-content: center;
+}
+
+header nav ul li img {
+  width: 30px;
+  height: 30px;
+}
+header nav ul li {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+header nav ul li a {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--main-sand);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.menu-knap {
+  background-color: var(--main-black);
+  border-radius: 10px;
+  aspect-ratio: 1/1;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* active NavLink */
+.active {
+  /* border */
+  background: linear-gradient(var(--main-grey), var(--main-grey)) padding-box,
+    linear-gradient(
+        45deg,
+        var(--main-beige),
+        transparent,
+        transparent,
+        var(--main-beige)
+      )
+      border-box;
+  border-radius: 10px;
+  border: 4px solid transparent;
+  /* border end*/
+}
+
+/*----------------------
+--------Forside---------
+----------------------*/
+
+/* en kort intro tekst */
+.intro {
+  grid-column: 1 / 3;
+  grid-row: 2 / 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.intro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.intro h1 {
+  text-align: center;
+  font-size: 5vw;
+}
+
+.intro p {
+  color: transparent;
+  font-size: 11px;
+}
+
+.intro img {
+  width: 3rem;
+}
+
+.powerwords {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* billede af mig selv */
+.picture {
+  grid-column: 3 / 6;
+  grid-row: 2 / 5;
+
+  object-fit: cover;
+  filter: grayscale();
+  border-radius: 10px;
+
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+}
+
+/* projekter */
+.projects {
+  grid-column: 1 / 5;
+  grid-row: 5 / 9;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projectsHero {
+  width: 100%;
+  height: 40%;
+  filter: grayscale();
+  border-radius: 10px;
+  object-fit: cover;
+  filter: grayscale();
+}
+
+.projects p {
+  width: 100%;
+  border-top: 1px solid var(--main-black);
+  margin-bottom: 2%;
+  cursor: pointer;
+}
+
+/* omkring mig */
+.bio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+
+  grid-column: 5 / 6;
+  grid-row: 7 / 10;
+}
+
+.bio h1 {
+  font-size: 1rem;
+}
+
+/* kontakt */
+.contact {
+  grid-column: 1 / 5;
+  grid-row: 9 / 10;
+  background-color: var(--main-grey);
+  color: var(--main-beige);
+}
+
+.contactSpan {
+  font-style: italic;
+  font-weight: 200;
+  color: var(--main-beige);
+}
+
+/* so-me */
+.so-me {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  align-items: center;
+
+  grid-column: 5 / 6;
+  grid-row: 5 / 7;
+}
+
+.so-me a {
+  text-decoration: none;
+  color: var(--main-black);
+}
+
+/*----------------------
+-------Undersider-------
+----------------------*/
+.underside-text {
+  font-size: 3vw;
+}
+
+.main-indhold-wrapper {
+  background-color: var(--main-sand);
+  border-radius: 10px;
+  padding: 15px;
+  grid-row: 2 / 8;
+  grid-column: 1 / 6;
+  color: var(--main-black);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main-indhold-wrapper a {
+  text-decoration: none;
+  color: var(--main-beige);
+}
+
+.mini-vesntre-wrapper {
+  background-color: var(--main-sand);
+  border-radius: 10px;
+  padding: 15px;
+  grid-row: 8 / 10;
+  grid-column: 1 / 3;
+  color: var(--main-black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mini-vesntre-liste {
+  font-weight: bold;
+  font-size: 2.5dvw;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.mini-vesntre-liste p {
+  cursor: pointer;
+}
+
+.mini-hoejre-wrapper {
+  background-color: var(--main-sand);
+  border-radius: 10px;
+  padding: 15px;
+  grid-row: 8 / 10;
+  grid-column: 3 / 6;
+  color: var(--main-black);
+  display: flex;
+  flex-direction: column;
+}
+
+/*----
+---Projects---*/
+
+.project-btn {
+  background-color: var(--main-grey);
+  border-radius: 10px;
+  padding: 5px;
+  width: fit-content;
+}
+
+.projects-tools {
+  font-size: 0.5rem;
+}
+
+.project-Heroimage {
+  height: 40%;
+}
+
+.project-logo {
+  height: 30px;
+}
+
+.project-image-icon {
+  height: 18px;
+}
+
+/*----
+---contact---*/
+.contact-page-color {
+  background-color: var(--main-grey);
+  color: var(--main-beige);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-page-image {
+  display: flex;
+  object-fit: cover;
+  height: 60%;
+  width: 100%;
+}
+
+.so-me-buttons {
+  background-color: var(--main-beige);
+  border-radius: 10px;
+  padding: 5px;
+  width: 9dvw;
+  height: 9dvw;
+}
+
+.button-wrapper {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.call-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-venstre-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+}
+
+/*----
+---About---*/
+.image-About {
+  object-fit: cover;
+  filter: grayscale();
+  height: 50%;
+}
+.image-About-small {
+  object-fit: cover;
+  filter: grayscale();
+  height: 100%;
+}
+
+.about-billede {
+  width: 100%;
+  height: 40%;
+  object-fit: scale-down;
+}
+
+/*----
+---Services---*/
+.services_pris {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.services_pris a {
+  background-color: var(--main-grey);
+  padding: 5px;
+  border-radius: 10px;
+  color: var(--main-beige);
+  text-decoration: none;
+}
+
+/*----------------------
+-----Media queries------
+----------------------*/
+
+@media only screen and (min-width: 700px) {
+  /* ---------
+  grid */
+  .grid-container {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+  }
+
+  /* ---------
+  header */
+
+  header {
+    grid-column: 1 / 9;
+    grid-row: 1 / 2;
+  }
+
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    align-items: center;
+  }
+
+  /* burger menu*/
+  header nav ul {
+    position: initial;
+    transform: none;
+
+    background-color: transparent;
+    padding: none;
+    width: auto;
+    background: transparent;
+    transition: none;
+  }
+
+  header nav ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* fjern ikonerne */
+  header nav ul li img {
+    display: none;
+  }
+
+  /* gør teksten sort */
+  header nav ul li a {
+    color: var(--main-black);
+  }
+
+  /* active NavLink */
+  .active {
+    color: var(--main-sand);
+  }
+
+  header nav ul li a:hover {
+    transition: all 1s ease-in-out;
+  }
+
+  header nav ul li a:hover {
+    transition: all 0.1s ease-in-out;
+    /* border */
+    background: linear-gradient(var(--main-black), var(--main-black))
+        padding-box,
+      linear-gradient(
+          90deg,
+          var(--main-beige),
+          transparent,
+          transparent,
+          var(--main-beige)
+        )
+        border-box;
+    /* border end*/
+
+    color: var(--main-sand);
+  }
+
+  /* fjern knappen */
+  .menu-knap {
+    display: none;
+  }
+
+  /* ---------
+  en kort intro tekst */
+
+  .intro {
+    grid-column: 1 / 5;
+    grid-row: 2 / 6;
+    align-items: start;
+    justify-content: space-between;
+  }
+
+  .intro h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro img {
+    width: 10vw;
+  }
+
+  .intro p {
+    color: var(--main-black);
+    font-size: 2vw;
+  }
+
+  .intro-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  /* ---------
+  billede af mig selv */
+  .picture {
+    grid-column: 5 / 7;
+    grid-row: 2 / 6;
+  }
+
+  /* ---------
+  projekter */
+  .projects {
+    grid-column: 7 / 9;
+    grid-row: 2 / 8;
+  }
+
+  /* ---------
+  omkring mig */
+  .bio {
+    grid-column: 1 / 4;
+    grid-row: 6 / 9;
+    justify-content: space-between;
+  }
+
+  /* ---------
+  kontakt */
+  .contact {
+    grid-column: 4 / 7;
+    grid-row: 6 / 9;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+  }
+  .contact h1 {
+    padding: 20px;
+    font-size: 3rem;
+  }
+
+  /* ---------
+  so-me */
+  .so-me {
+    flex-direction: row;
+    grid-column: 7 / 9;
+    grid-row: 8 / 9;
+    font-size: 1.4vw;
+  }
+
+  /*----------------------
+-------Undersider-------
+----------------------*/
+  .mobil-text {
+    font-size: 1rem;
+  }
+  .main-indhold-wrapper {
+    grid-row: 2 / 10;
+    grid-column: 1 / 6;
+  }
+
+  .mini-vesntre-wrapper {
+    grid-row: 2 / 6;
+    grid-column: 6 / 9;
+  }
+
+  .mini-hoejre-wrapper {
+    grid-row: 6 / 10;
+    grid-column: 6 / 9;
+  }
+
+  .mini-vesntre-liste p {
+    font-size: 1.5rem;
+  }
+
+  .large-text {
+    font-size: 1.2rem;
+  }
+
+  .large-image {
+    height: 50px;
+  }
+
+  .object-top {
+    object-position: center 25%;
+  }
+  .object-center {
+    object-position: center 25%;
+  }
+
+  .project-logo {
+    height: 70px;
+  }
+
+  .about-billede {
+    width: 100%;
+    height: 60%;
+    object-fit: scale-down;
+  }
+
+  .underside-text {
+    font-size: 1rem;
+  }
+
+  .so-me-buttons {
+    width: 80px;
+    height: 80px;
+  }
+}
